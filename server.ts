@@ -34,6 +34,17 @@ app.use((req, res, next) => {
   next();
 });
 
+// URL path restoration for Vercel Serverless Function routing
+app.use((req, res, next) => {
+  const matchedPath = (req.headers["x-matched-path"] as string) || 
+                      (req.headers["x-vercel-matched-path"] as string) || 
+                      (req.headers["x-forwarded-uri"] as string);
+  if (matchedPath && matchedPath.startsWith("/api") && (req.url === "/api" || req.url === "/api/" || req.url === "/")) {
+    req.url = matchedPath;
+  }
+  next();
+});
+
 // In-memory state
 let currentOpportunities: TargetOpportunity[] = [];
 let currentAudit: ResumeAudit | null = null;
@@ -816,8 +827,16 @@ apiRouter.get("/", (req, res) => {
   });
 });
 
-// Health & provider status
+// Health check endpoint (independent of external services)
 apiRouter.get("/health", (req, res) => {
+  res.json({
+    ok: true,
+    service: "PlacePilot API"
+  });
+});
+
+// System models & AI provider readiness status
+apiRouter.get("/system/models", (req, res) => {
   const hasAzure = Boolean(
     process.env.AZURE_OPENAI_API_KEY && 
     (process.env.AZURE_OPENAI_API_ENDPOINT || process.env.AZURE_OPENAI_ENDPOINT)
@@ -827,7 +846,6 @@ apiRouter.get("/health", (req, res) => {
 
   res.json({
     ok: true,
-    service: "PlacePilot API",
     status: "ok",
     active_provider: activeProvider,
     has_gemini_key: hasGeminiKey,
