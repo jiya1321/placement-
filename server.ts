@@ -1578,9 +1578,8 @@ apiRouter.post("/resume/parse-document", async (req, res) => {
   }
 });
 
-// Mount the API router for both /api and root paths to handle all routing configurations
+// Mount the API router exclusively under /api so root and client paths render the React UI
 app.use("/api", apiRouter);
-app.use("/", apiRouter);
 
 export { app, apiRouter };
 export default app;
