@@ -826,6 +826,8 @@ apiRouter.get("/health", (req, res) => {
   const hasGeminiKey = Boolean(process.env.GEMINI_API_KEY);
 
   res.json({
+    ok: true,
+    service: "PlacePilot API",
     status: "ok",
     active_provider: activeProvider,
     has_gemini_key: hasGeminiKey,
