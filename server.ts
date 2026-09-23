@@ -21,9 +21,18 @@ import {
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
-
 app.use(express.json({ limit: "10mb" }));
+
+// CORS & Preflight middleware for Vercel and local dev
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization, api-key");
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+  next();
+});
 
 // In-memory state
 let currentOpportunities: TargetOpportunity[] = [];
@@ -784,10 +793,31 @@ function initializeDomainFallback(domain: string, goal: string, resumeText: stri
   return { audit, opportunities, roadmap };
 }
 
-// --- API ROUTES ---
+// --- API ROUTES ROUTER ---
+const apiRouter = express.Router();
+
+// Root status endpoint
+apiRouter.get("/", (req, res) => {
+  res.json({
+    status: "PlacePilot API operational",
+    endpoints: [
+      "/api/state",
+      "/api/health",
+      "/api/azure/metrics",
+      "/api/azure/test",
+      "/api/auth/users",
+      "/api/chat",
+      "/api/resume/audit",
+      "/api/opportunities/scout",
+      "/api/roadmap/generate",
+      "/api/applications",
+      "/api/resume/parse-document"
+    ]
+  });
+});
 
 // Health & provider status
-app.get("/api/health", (req, res) => {
+apiRouter.get("/health", (req, res) => {
   const hasAzure = Boolean(
     process.env.AZURE_OPENAI_API_KEY && 
     (process.env.AZURE_OPENAI_API_ENDPOINT || process.env.AZURE_OPENAI_ENDPOINT)
@@ -810,7 +840,7 @@ app.get("/api/health", (req, res) => {
 });
 
 // Real-time Azure telemetry endpoint
-app.get("/api/azure/metrics", (req, res) => {
+apiRouter.get("/azure/metrics", (req, res) => {
   res.json({
     connected: Boolean(process.env.AZURE_OPENAI_API_KEY && (process.env.AZURE_OPENAI_API_ENDPOINT || process.env.AZURE_OPENAI_ENDPOINT)),
     endpoint: (process.env.AZURE_OPENAI_API_ENDPOINT || process.env.AZURE_OPENAI_ENDPOINT || "").replace(/\/+$/, ""),
@@ -820,7 +850,7 @@ app.get("/api/azure/metrics", (req, res) => {
 });
 
 // Live Azure test endpoint
-app.get("/api/azure/test", async (req, res) => {
+apiRouter.get("/azure/test", async (req, res) => {
   const apiKey = process.env.AZURE_OPENAI_API_KEY;
   const rawEndpoint = process.env.AZURE_OPENAI_API_ENDPOINT || process.env.AZURE_OPENAI_ENDPOINT;
   const deployment = process.env.AZURE_OPENAI_CHAT_DEPLOYMENT || "gpt-4.1-mini";
@@ -882,7 +912,7 @@ app.get("/api/azure/test", async (req, res) => {
 });
 
 // Full state snapshot
-app.get("/api/state", (req, res) => {
+apiRouter.get("/state", (req, res) => {
   res.json({
     opportunities: currentOpportunities,
     audit: currentAudit,
@@ -893,11 +923,11 @@ app.get("/api/state", (req, res) => {
 });
 
 // User Authentication & Profile Persistence
-app.get("/api/auth/users", (req, res) => {
+apiRouter.get("/auth/users", (req, res) => {
   res.json({ users: registeredUsers });
 });
 
-app.post("/api/auth/login", (req, res) => {
+apiRouter.post("/auth/login", (req, res) => {
   const { email, password } = req.body;
   if (!email) {
     return res.status(400).json({ error: "Email is required." });
@@ -925,7 +955,7 @@ app.post("/api/auth/login", (req, res) => {
   res.json({ success: true, user });
 });
 
-app.post("/api/auth/register", (req, res) => {
+apiRouter.post("/auth/register", (req, res) => {
   const { name, email, country, preferred_location, target_domain, career_goal, education, grad_year, experience_level } = req.body;
   if (!name || !email) {
     return res.status(400).json({ error: "Name and email are required." });
@@ -967,7 +997,7 @@ app.post("/api/auth/register", (req, res) => {
 });
 
 // Save Resume Directly to User's Profile
-app.post("/api/user/resume", (req, res) => {
+apiRouter.post("/user/resume", (req, res) => {
   try {
     const { email, resume_text, resume_filename } = req.body;
     if (!resume_text) {
@@ -998,7 +1028,7 @@ app.post("/api/user/resume", (req, res) => {
 });
 
 // 1. RESUME AUDITOR AGENT: Deep ATS critique & flaw diagnosis with Before/After suggestions
-app.post("/api/resume/audit", async (req, res) => {
+apiRouter.post("/resume/audit", async (req, res) => {
   const { resume_text, target_domain, target_role } = req.body;
   if (!resume_text) {
     return res.status(400).json({ error: "Resume text is required for audit." });
@@ -1067,7 +1097,7 @@ Return strictly a JSON object with this exact schema:
 });
 
 // 2. OPPORTUNITY SCOUT AGENT: Dynamic discovery across ANY domain (tech, finance, healthcare, design, etc.)
-app.post("/api/opportunities/scout", async (req, res) => {
+apiRouter.post("/opportunities/scout", async (req, res) => {
   const { resume_text, career_goal, target_domain, count = 3, location, country } = req.body;
   if (!resume_text || !career_goal) {
     return res.status(400).json({ error: "Resume text and career goal are required." });
@@ -1167,7 +1197,7 @@ Return strictly a JSON array of opportunities matching this schema:
 });
 
 // 3. ROADMAP STRATEGIST AGENT: 4-Week Custom Sprint Preparation Roadmap
-app.post("/api/roadmap/generate", async (req, res) => {
+apiRouter.post("/roadmap/generate", async (req, res) => {
   const { resume_text, target_role, target_domain, target_companies } = req.body;
   if (!resume_text || !target_role) {
     return res.status(400).json({ error: "Resume text and target role are required." });
@@ -1244,7 +1274,7 @@ Return strictly JSON matching this schema:
 });
 
 // 4. CONTEXT-AWARE CAREER ADVISOR (CHATBOT): Grounded in user's dossier, RAG knowledge, and protected by career domain guardrails
-app.post("/api/chat", async (req, res) => {
+apiRouter.post("/chat", async (req, res) => {
   try {
     const { 
       question, 
@@ -1385,7 +1415,7 @@ app.post("/api/chat", async (req, res) => {
 });
 
 // 5. APPLICATION TRACKER: Add / Update application
-app.post("/api/applications", (req, res) => {
+apiRouter.post("/applications", (req, res) => {
   const { opportunity_id, title, company, industry, location, stipend, status } = req.body;
   
   const existingIdx = currentApplications.findIndex(a => a.opportunity_id === opportunity_id);
@@ -1416,7 +1446,7 @@ app.post("/api/applications", (req, res) => {
 });
 
 // 6. RESUME DOCUMENT PARSER (PDF, Word DOCX/DOC, ODF/ODT, TXT, RTF)
-app.post("/api/resume/parse-document", async (req, res) => {
+apiRouter.post("/resume/parse-document", async (req, res) => {
   try {
     const { filename, file_base64, file_type } = req.body;
     if (!file_base64) {
@@ -1528,75 +1558,9 @@ app.post("/api/resume/parse-document", async (req, res) => {
   }
 });
 
-// Vite middleware in dev or static files in production
-async function start() {
-  if (process.env.NODE_ENV !== "production") {
-    const { createServer: createViteServer } = await import("vite");
-    const vite = await createViteServer({
-      server: { middlewareMode: true },
-      appType: "spa",
-    });
-    app.use(vite.middlewares);
-    app.use("*", async (req, res, next) => {
-      const url = req.originalUrl;
-      try {
-        const templatePath = path.resolve(process.cwd(), "index.html");
-        let template = fs.readFileSync(templatePath, "utf-8");
-        template = await vite.transformIndexHtml(url, template);
-        res.status(200).set({ 
-          "Content-Type": "text/html",
-          "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
-          "Pragma": "no-cache",
-          "Expires": "0"
-        }).end(template);
-      } catch (e: any) {
-        vite.ssrFixStacktrace(e);
-        next(e);
-      }
-    });
-  } else {
-    const distPath = path.join(process.cwd(), "dist");
-    app.use(express.static(distPath));
-    app.get("*", (req, res) => {
-      res.sendFile(path.join(distPath, "index.html"));
-    });
-  }
+// Mount the API router for both /api and root paths to handle all routing configurations
+app.use("/api", apiRouter);
+app.use("/", apiRouter);
 
-  const server = app.listen(PORT, "0.0.0.0", () => {
-    console.log(`[PlacePilot OS] Running on http://0.0.0.0:${PORT}`);
-  });
-
-  server.on("error", (err: any) => {
-    if (err.code === "EADDRINUSE") {
-      console.warn(`[Port ${PORT} in use, waiting 1s before retrying...]`);
-      setTimeout(() => {
-        try {
-          server.close();
-        } catch {}
-        app.listen(PORT, "0.0.0.0", () => {
-          console.log(`[PlacePilot OS] Running on http://0.0.0.0:${PORT} (recovered)`);
-        });
-      }, 1000);
-    } else {
-      console.error("[Server Error]:", err);
-    }
-  });
-
-  const shutdown = () => {
-    try {
-      server.close(() => process.exit(0));
-    } catch {
-      process.exit(0);
-    }
-  };
-  process.on("SIGINT", shutdown);
-  process.on("SIGTERM", shutdown);
-}
-
-// Only start the standalone HTTP listener when running locally, not in Vercel serverless functions
-if (!process.env.VERCEL) {
-  start();
-}
-
-export { app };
+export { app, apiRouter };
 export default app;
