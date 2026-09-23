@@ -1,0 +1,422 @@
+[
+  {
+    "id": "post-001",
+    "title": "Frontend Engineering Intern",
+    "company": "Voxel Dynamics",
+    "location": "San Francisco, CA (Hybrid)",
+    "description": "Collaborate with our web team to engineer responsive component libraries in React and TypeScript, optimize Core Web Vitals, and build interactive 3D product visualizers using WebGL.",
+    "skills": "React, TypeScript, Tailwind CSS, Next.js, WebGL",
+    "stipend": "$48/hour + $1,500/mo housing subsidy",
+    "deadline": "2026-11-15"
+  },
+  {
+    "id": "post-002",
+    "title": "Full-Stack Software Intern",
+    "company": "Horizon Cloud Labs",
+    "location": "Seattle, WA (On-site)",
+    "description": "Develop scalable microservices in Go and Python FastAPI paired with React dashboards. Implement automated unit tests, GraphQL endpoints, and Postgres database migrations.",
+    "skills": "Go, Python, React, PostgreSQL, Docker, GraphQL",
+    "stipend": "$52/hour + corporate housing",
+    "deadline": "2026-11-01"
+  },
+  {
+    "id": "post-003",
+    "title": "Backend Systems Intern",
+    "company": "Aether Data Systems",
+    "location": "New York, NY (Hybrid)",
+    "description": "Build high-throughput event processing pipelines using Apache Kafka, Redis, and Python. Optimize SQL query latency and write robust distributed lock mechanisms.",
+    "skills": "Python, Redis, Kafka, PostgreSQL, Distributed Systems, Linux",
+    "stipend": "$50/hour + $2,000 housing stipend",
+    "deadline": "2026-10-30"
+  },
+  {
+    "id": "post-004",
+    "title": "Machine Learning Research Intern",
+    "company": "DeepCortex AI",
+    "location": "Boston, MA (On-site)",
+    "description": "Assist research scientists in training and fine-tuning transformer models for multimodal document comprehension. Benchmark attention mechanisms using PyTorch on GPU clusters.",
+    "skills": "Python, PyTorch, Hugging Face, Transformers, CUDA, NumPy",
+    "stipend": "$55/hour + relocation assistance",
+    "deadline": "2026-10-15"
+  },
+  {
+    "id": "post-005",
+    "title": "Data Science & Analytics Intern",
+    "company": "FinPulse Global",
+    "location": "Chicago, IL (Hybrid)",
+    "description": "Analyze transaction trends and consumer sentiment data using Pandas and SQL. Build predictive churn models and craft interactive executive dashboards in Streamlit and Tableau.",
+    "skills": "Python, Pandas, SQL, Scikit-learn, Tableau, Statistics",
+    "stipend": "$42/hour + commuter benefits",
+    "deadline": "2026-11-20"
+  },
+  {
+    "id": "post-006",
+    "title": "Product Design (UI/UX) Intern",
+    "company": "Lumina Creative Studio",
+    "location": "Remote (US)",
+    "description": "Design design-system components, wireframes, and high-fidelity interactive prototypes in Figma. Conduct moderated usability tests and audit color contrast for WCAG AA compliance.",
+    "skills": "Figma, Design Systems, User Research, Wireframing, Prototyping, Accessibility",
+    "stipend": "$38/hour",
+    "deadline": "2026-12-01"
+  },
+  {
+    "id": "post-007",
+    "title": "Cloud DevOps & Infrastructure Intern",
+    "company": "Stratus Networks",
+    "location": "Austin, TX (Hybrid)",
+    "description": "Automate containerized deployment pipelines using Kubernetes, Docker, and GitHub Actions. Define infrastructure as code with Terraform on AWS cloud infrastructure.",
+    "skills": "Kubernetes, Docker, Terraform, AWS, GitHub Actions, Bash, Python",
+    "stipend": "$46/hour + $1,200 housing allowance",
+    "deadline": "2026-11-30"
+  },
+  {
+    "id": "post-008",
+    "title": "Cybersecurity & AppSec Intern",
+    "company": "Sentinel Shield Security",
+    "location": "Washington, DC (Hybrid)",
+    "description": "Conduct dynamic and static vulnerability assessments across web applications. Write custom security scanners in Python and participate in simulated blue-team incident response.",
+    "skills": "Python, OWASP Top 10, Wireshark, Burp Suite, Cryptography, Linux",
+    "stipend": "$45/hour + security clearance sponsorship",
+    "deadline": "2026-10-25"
+  },
+  {
+    "id": "post-009",
+    "title": "iOS Mobile Engineering Intern",
+    "company": "SwiftMotion Technologies",
+    "location": "Cupertino, CA (On-site)",
+    "description": "Build user-facing features in our consumer iOS application using Swift and SwiftUI. Integrate CoreAnimation, offline-first CoreData sync, and biometric authentication.",
+    "skills": "Swift, SwiftUI, CoreData, Combine, iOS SDK, Git",
+    "stipend": "$50/hour + corporate apartments",
+    "deadline": "2026-11-10"
+  },
+  {
+    "id": "post-010",
+    "title": "Android Application Intern",
+    "company": "NovaWave Mobility",
+    "location": "San Jose, CA (Hybrid)",
+    "description": "Construct reactive user interfaces in Kotlin with Jetpack Compose. Implement Room database caching, Coroutines for asynchronous work, and modern Material 3 design patterns.",
+    "skills": "Kotlin, Jetpack Compose, Coroutines, Room DB, Android Architecture Components",
+    "stipend": "$47/hour + $1,500 housing stipend",
+    "deadline": "2026-11-12"
+  },
+  {
+    "id": "post-011",
+    "title": "Associate Product Manager Intern",
+    "company": "Catalyst Ventures",
+    "location": "San Francisco, CA (Hybrid)",
+    "description": "Synthesize user feedback, scope feature specifications, and run multivariate A/B tests with engineering and growth teams to increase student activation rates.",
+    "skills": "Product Roadmapping, SQL, Wireframing, User Interviews, A/B Testing, Agile",
+    "stipend": "$44/hour + $1,000 monthly bonus",
+    "deadline": "2026-11-05"
+  },
+  {
+    "id": "post-012",
+    "title": "Growth Marketing & Content Intern",
+    "company": "Echo Viral Media",
+    "location": "Remote (US)",
+    "description": "Craft SEO-optimized editorial content, manage organic campus ambassador programs, and optimize email engagement loops with Google Analytics and Mixpanel.",
+    "skills": "SEO, Copywriting, Google Analytics, Email Marketing, Social Media Strategy",
+    "stipend": "$32/hour",
+    "deadline": "2026-12-15"
+  },
+  {
+    "id": "post-013",
+    "title": "Quantitative Trading Intern",
+    "company": "Apex Citadel Capital",
+    "location": "New York, NY (On-site)",
+    "description": "Develop and backtest statistical arbitrage algorithms on tick-level market data in C++ and Python. Compute Sharpe ratios and model portfolio slippage.",
+    "skills": "C++, Python, Linear Algebra, Probability, Pandas, Algorithm Optimization",
+    "stipend": "$65/hour + $3,000 housing stipend",
+    "deadline": "2026-10-10"
+  },
+  {
+    "id": "post-014",
+    "title": "Robotics Software Intern",
+    "company": "Kinetic Automations",
+    "location": "Pittsburgh, PA (Hybrid)",
+    "description": "Program trajectory planning and obstacle avoidance modules for autonomous warehouse robots using ROS2, C++, and OpenCV camera perception.",
+    "skills": "ROS2, C++, OpenCV, Robotics Kinematics, Python, Linux",
+    "stipend": "$45/hour + relocation fund",
+    "deadline": "2026-11-25"
+  },
+  {
+    "id": "post-015",
+    "title": "Natural Language Processing Intern",
+    "company": "Lexicon Labs",
+    "location": "Seattle, WA (Hybrid)",
+    "description": "Implement retrieval-augmented generation (RAG) pipelines and evaluate vector index clustering performance using FAISS, LangChain, and Python.",
+    "skills": "Python, NLP, Embeddings, Vector Databases, Hugging Face, PyTorch",
+    "stipend": "$51/hour + $1,500 housing stipend",
+    "deadline": "2026-11-08"
+  },
+  {
+    "id": "post-016",
+    "title": "Full-Stack Web Dev Intern (Node/React)",
+    "company": "BaseCamp Digital",
+    "location": "Denver, CO (Hybrid)",
+    "description": "Engineer interactive customer onboarding portals using Next.js 14, Node.js Express, and Prisma ORM. Integrate Stripe billing and real-time socket events.",
+    "skills": "React, Next.js, Node.js, Express, TypeScript, Prisma, Tailwind CSS",
+    "stipend": "$40/hour + $1,000 wellness stipend",
+    "deadline": "2026-12-05"
+  },
+  {
+    "id": "post-017",
+    "title": "Game Gameplay Programmer Intern",
+    "company": "Mythic Realm Studios",
+    "location": "Los Angeles, CA (On-site)",
+    "description": "Write fluid player character mechanics, weapon physics, and enemy AI state machines in Unreal Engine 5 using C++ and Blueprints.",
+    "skills": "C++, Unreal Engine 5, Gameplay Programming, 3D Math, Git",
+    "stipend": "$36/hour + game library perks",
+    "deadline": "2026-11-20"
+  },
+  {
+    "id": "post-018",
+    "title": "Embedded Firmware Engineering Intern",
+    "company": "PulseCore Medical Devices",
+    "location": "Minneapolis, MN (On-site)",
+    "description": "Write bare-metal C firmware for low-power ARM Cortex-M microcontrollers. Implement I2C and SPI peripheral drivers with real-time OS (FreeRTOS) constraints.",
+    "skills": "C, ARM Cortex-M, FreeRTOS, I2C/SPI, Oscilloscopes, Embedded Systems",
+    "stipend": "$44/hour + housing assistance",
+    "deadline": "2026-11-18"
+  },
+  {
+    "id": "post-019",
+    "title": "Data Engineering Intern",
+    "company": "SnowPeak Analytics",
+    "location": "Salt Lake City, UT (Hybrid)",
+    "description": "Build robust ETL data pipelines in Apache Airflow and dbt feeding Snowflake data warehouses. Optimize PySpark transformation jobs on multi-terabyte datasets.",
+    "skills": "SQL, Python, Apache Airflow, Snowflake, dbt, PySpark",
+    "stipend": "$43/hour + ski pass subsidy",
+    "deadline": "2026-11-28"
+  },
+  {
+    "id": "post-020",
+    "title": "Developer Relations & Technical Writing Intern",
+    "company": "API Craft Systems",
+    "location": "Remote (US)",
+    "description": "Create sample code starter templates, API documentation, and interactive walk-through tutorials for third-party developers building on our developer SDKs.",
+    "skills": "Technical Writing, Markdown, TypeScript, Python, REST APIs, Developer Advocacy",
+    "stipend": "$36/hour",
+    "deadline": "2026-12-10"
+  },
+  {
+    "id": "post-021",
+    "title": "Computer Vision Engineering Intern",
+    "company": "Argus Vision Works",
+    "location": "San Diego, CA (Hybrid)",
+    "description": "Develop object detection and semantic segmentation algorithms for edge computing hardware using YOLOv8, PyTorch, and TensorRT acceleration.",
+    "skills": "Python, PyTorch, OpenCV, TensorRT, Object Detection, Deep Learning",
+    "stipend": "$49/hour + $1,400 housing allowance",
+    "deadline": "2026-11-03"
+  },
+  {
+    "id": "post-022",
+    "title": "Fintech Backend Engineering Intern",
+    "company": "LedgerPay Technologies",
+    "location": "Charlotte, NC (Hybrid)",
+    "description": "Architect idempotent payment settlement workflows in Java Spring Boot with double-entry accounting ledgers and PCI-DSS compliance standards.",
+    "skills": "Java, Spring Boot, PostgreSQL, Microservices, JUnit, Kafka",
+    "stipend": "$44/hour + $1,200 relocation",
+    "deadline": "2026-11-14"
+  },
+  {
+    "id": "post-023",
+    "title": "Healthcare AI Software Intern",
+    "company": "BioHelix Informatics",
+    "location": "Philadelphia, PA (Hybrid)",
+    "description": "Preprocess clinical EHR records and train sequence models to forecast patient length of stay under HIPAA compliance boundaries.",
+    "skills": "Python, Scikit-learn, Pandas, HIPAA Compliance, Medical Data Processing",
+    "stipend": "$43/hour + transit pass",
+    "deadline": "2026-11-22"
+  },
+  {
+    "id": "post-024",
+    "title": "React Native Mobile Developer Intern",
+    "company": "UrbanPulse Mobility",
+    "location": "Atlanta, GA (Hybrid)",
+    "description": "Implement cross-platform consumer navigation screens in React Native and TypeScript, managing Redux state and integrating Mapbox SDKs.",
+    "skills": "React Native, TypeScript, Redux Toolkit, Mapbox, REST APIs",
+    "stipend": "$40/hour",
+    "deadline": "2026-12-02"
+  },
+  {
+    "id": "post-025",
+    "title": "Site Reliability Engineering (SRE) Intern",
+    "company": "Global Mesh Networks",
+    "location": "Dallas, TX (Hybrid)",
+    "description": "Establish automated Prometheus alerting rules, Grafana dashboards, and auto-healing scripts in Go and Python to maintain 99.99% service uptime.",
+    "skills": "Go, Python, Prometheus, Grafana, Linux, Docker, Bash",
+    "stipend": "$47/hour + on-call stipend",
+    "deadline": "2026-11-07"
+  },
+  {
+    "id": "post-026",
+    "title": "Brand Design & Visual Media Intern",
+    "company": "Prism Brand Collective",
+    "location": "New York, NY (Hybrid)",
+    "description": "Design typography assets, marketing campaign illustrations, brand guidelines, and vector iconography across digital and print collateral.",
+    "skills": "Adobe Illustrator, Photoshop, Typography, Brand Identity, Figma",
+    "stipend": "$35/hour",
+    "deadline": "2026-12-08"
+  },
+  {
+    "id": "post-027",
+    "title": "Decentralized Systems & Smart Contract Intern",
+    "company": "Veritas Ledger Protocol",
+    "location": "Remote (US)",
+    "description": "Write and formally verify Solidity smart contracts on EVM testnets using Hardhat and Foundry. Conduct gas optimization benchmarks and unit testing.",
+    "skills": "Solidity, Ethereum, Foundry, TypeScript, Cryptography, Smart Contracts",
+    "stipend": "$48/hour",
+    "deadline": "2026-11-19"
+  },
+  {
+    "id": "post-028",
+    "title": "Database Optimization & Storage Intern",
+    "company": "KiloByte Systems",
+    "location": "San Jose, CA (On-site)",
+    "description": "Benchmark B-tree page caching and log-structured merge (LSM) trees in C++. Analyze write amplification and disk I/O performance on NVMe drives.",
+    "skills": "C++, Linux Kernel, Storage Engines, Performance Profiling, B-Trees",
+    "stipend": "$53/hour + corporate housing",
+    "deadline": "2026-10-28"
+  },
+  {
+    "id": "post-029",
+    "title": "Frontend Accessibility (a11y) Intern",
+    "company": "AllAccess Web Foundation",
+    "location": "Remote (US)",
+    "description": "Audit complex React component libraries for screen reader compatibility (NVDA, VoiceOver), keyboard navigability, and ARIA attributes.",
+    "skills": "HTML5, ARIA, React, WCAG 2.1, Screen Readers, Jest Testing",
+    "stipend": "$39/hour",
+    "deadline": "2026-12-12"
+  },
+  {
+    "id": "post-030",
+    "title": "Audio Signal Processing Intern",
+    "company": "SonicWave Acoustics",
+    "location": "San Francisco, CA (Hybrid)",
+    "description": "Implement acoustic echo cancellation and noise suppression algorithms in C++ and Python using digital filter banks and Fourier transforms.",
+    "skills": "C++, Python, DSP, Audio Processing, FFT, NumPy",
+    "stipend": "$46/hour + audio gear allowance",
+    "deadline": "2026-11-16"
+  },
+  {
+    "id": "post-031",
+    "title": "Enterprise QA Automation Intern",
+    "company": "TrueNorth Enterprise Software",
+    "location": "Phoenix, AZ (Hybrid)",
+    "description": "Write end-to-end regression suites in Playwright and Cypress for enterprise web portals. Integrate automated smoke tests into GitLab CI pipelines.",
+    "skills": "TypeScript, Playwright, Cypress, CI/CD, Test Automation, QA",
+    "stipend": "$37/hour",
+    "deadline": "2026-12-04"
+  },
+  {
+    "id": "post-032",
+    "title": "E-Commerce Growth Engineering Intern",
+    "company": "ShopStream Global",
+    "location": "Remote (US)",
+    "description": "Develop high-converting checkout funnels, dynamic recommendation widgets, and server-side tracking pipelines in Next.js and Tailwind CSS.",
+    "skills": "React, Next.js, Tailwind CSS, TypeScript, Analytics, A/B Testing",
+    "stipend": "$41/hour",
+    "deadline": "2026-11-27"
+  },
+  {
+    "id": "post-033",
+    "title": "Geospatial Data Engineering Intern",
+    "company": "TerraMap Geospatial",
+    "location": "Boulder, CO (Hybrid)",
+    "description": "Process satellite imagery and GIS raster datasets using GeoPandas, PostGIS, and Python. Generate vector tile layers for real-time wildfire tracking.",
+    "skills": "Python, GIS, GeoPandas, PostGIS, Spatial Analysis, Mapbox",
+    "stipend": "$42/hour + outdoor gear stipend",
+    "deadline": "2026-11-21"
+  },
+  {
+    "id": "post-034",
+    "title": "Security Operations Center (SOC) Intern",
+    "company": "IronGate Cyber Defense",
+    "location": "Tampa, FL (Hybrid)",
+    "description": "Monitor real-time SIEM alerts (Splunk), investigate phishing escalations, and write automated triage playbooks in Python.",
+    "skills": "Splunk, SIEM, Incident Response, Python, Network Protocols, Linux",
+    "stipend": "$38/hour",
+    "deadline": "2026-12-07"
+  },
+  {
+    "id": "post-035",
+    "title": "Compilers & Developer Tooling Intern",
+    "company": "SyntaxForge Labs",
+    "location": "Seattle, WA (On-site)",
+    "description": "Contribute AST parsing passes and static type analysis diagnostics to an open-source Rust compiler and language server protocol (LSP).",
+    "skills": "Rust, LLVM, Compilers, Type Systems, Abstract Syntax Trees",
+    "stipend": "$54/hour + $2,000 housing stipend",
+    "deadline": "2026-10-31"
+  },
+  {
+    "id": "post-036",
+    "title": "Customer Success & Solutions Engineering Intern",
+    "company": "Nexus Enterprise Cloud",
+    "location": "Chicago, IL (Hybrid)",
+    "description": "Assist sales engineering teams in assembling customized technical proof-of-concepts, debugging REST webhooks, and writing integration guides.",
+    "skills": "Python, JavaScript, REST APIs, Technical Demos, Problem Solving",
+    "stipend": "$36/hour + performance bonus",
+    "deadline": "2026-12-14"
+  },
+  {
+    "id": "post-037",
+    "title": "UI Motion & Interaction Design Intern",
+    "company": "Kinetic Craft Digital",
+    "location": "Remote (US)",
+    "description": "Design micro-interactions and smooth page transitions using Framer Motion, CSS animations, and Rive for next-generation fintech interfaces.",
+    "skills": "Framer Motion, CSS3, Rive, Figma, JavaScript, UI Animation",
+    "stipend": "$39/hour",
+    "deadline": "2026-12-06"
+  },
+  {
+    "id": "post-038",
+    "title": "Data Visualization Engineering Intern",
+    "company": "Atlas Metrics Lab",
+    "location": "New York, NY (Hybrid)",
+    "description": "Build responsive geospatial and statistical charts in D3.js, WebGL, and React to communicate climate indicators to policymakers.",
+    "skills": "D3.js, React, SVG, WebGL, JavaScript, Data Storytelling",
+    "stipend": "$45/hour + transit pass",
+    "deadline": "2026-11-17"
+  },
+  {
+    "id": "post-039",
+    "title": "Supply Chain Analytics Intern",
+    "company": "Vanguard Logistics Systems",
+    "location": "Memphis, TN (Hybrid)",
+    "description": "Optimize freight truck dispatch routes and warehouse inventory binning using mixed-integer linear programming (PuLP) and Python simulation.",
+    "skills": "Python, Operations Research, Linear Programming, SQL, Excel",
+    "stipend": "$38/hour",
+    "deadline": "2026-12-03"
+  },
+  {
+    "id": "post-040",
+    "title": "AI Ethics & Safety Research Intern",
+    "company": "Integrity AI Institute",
+    "location": "San Francisco, CA (Hybrid)",
+    "description": "Develop benchmark evaluation suites for detecting toxic outputs, hallucination rates, and prompt injection attacks in commercial language models.",
+    "skills": "Python, Red Teaming, NLP, AI Safety, Evaluation Metrics",
+    "stipend": "$48/hour + research publication support",
+    "deadline": "2026-11-11"
+  },
+  {
+    "id": "post-041",
+    "title": "Python Backend & API Intern",
+    "company": "PixelPoint Technologies",
+    "location": "Austin, TX (Hybrid)",
+    "description": "Construct RESTful API services using Python FastAPI, Pydantic validation, and SQLite / PostgreSQL. Implement role-based access control and rate limiting.",
+    "skills": "Python, FastAPI, Pydantic, SQLite, REST APIs, Git",
+    "stipend": "$42/hour + $1,000 housing allowance",
+    "deadline": "2026-11-26"
+  },
+  {
+    "id": "post-042",
+    "title": "Bioinformatics Software Intern",
+    "company": "GeneSequence Labs",
+    "location": "Cambridge, MA (On-site)",
+    "description": "Develop sequence alignment pipelines and variant-calling scripts using Biopython, Nextflow, and Linux cluster schedulers (SLURM).",
+    "skills": "Python, Biopython, Nextflow, Genomics, Linux, Bash",
+    "stipend": "$46/hour + campus gym pass",
+    "deadline": "2026-11-09"
+  }
+]

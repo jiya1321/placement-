@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlacePilot</title>
+    <meta name="description" content="Multi-agent career intelligence platform featuring dynamic opportunity scouting across any domain, ATS resume flaw auditing with XYZ rewrites, 4-week preparation roadmaps, and a context-aware AI advisor." />
+    <meta property="og:title" content="PlacePilot" />
+    <meta property="og:description" content="Multi-agent career intelligence platform featuring dynamic opportunity scouting across any domain, ATS resume flaw auditing with XYZ rewrites, 4-week preparation roadmaps, and a context-aware AI advisor." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap" rel="stylesheet">
+    <script>
+      // Clear any legacy Service Workers from previous projects running on localhost
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for (var r of registrations) {
+            r.unregister().then(function(unregistered) {
+              if (unregistered) console.log('[PlacePilot] Unregistered legacy service worker:', r);
+            });
+          }
+        });
+      }
+      if ('caches' in window) {
+        caches.keys().then(function(names) {
+          for (var name of names) {
+            caches.delete(name);
+            console.log('[PlacePilot] Cleared cache storage:', name);
+          }
+        });
+      }
+    </script>
+  </head>
+  <body class="bg-[#FAF8F3] text-[#1F1E1B] antialiased selection:bg-[#2F4F3A]/20 selection:text-[#1F1E1B]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

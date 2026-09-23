@@ -1,0 +1,6 @@
+{
+  "name": "PlacePilot",
+  "description": "Multi-agent career intelligence platform featuring dynamic opportunity scouting across any domain, ATS resume flaw auditing with XYZ rewrites, 4-week preparation roadmaps, and a context-aware AI advisor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
