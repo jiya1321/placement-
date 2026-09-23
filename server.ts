@@ -1593,4 +1593,10 @@ async function start() {
   process.on("SIGTERM", shutdown);
 }
 
-start();
+// Only start the standalone HTTP listener when running locally, not in Vercel serverless functions
+if (!process.env.VERCEL) {
+  start();
+}
+
+export { app };
+export default app;
